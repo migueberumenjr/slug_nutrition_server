@@ -1,7 +1,11 @@
-websocket-client==0.37.0
 bottle==0.12.10
+click==6.6
 Django==1.10.3
+Flask==0.11.1
 iso8601==0.1.11
+itsdangerous==0.24
+Jinja2==2.8
+MarkupSafe==0.23
 pycurl==7.43.0
 requests==2.11.1
 six==1.10.0
@@ -9,4 +13,5 @@ slackclient==1.0.2
 slacker==0.9.29
 virtualenv==15.0.3
 virtualenvwrapper-win==1.2.1
-
+websocket-client==0.37.0
+Werkzeug==0.11.11

@@ -1,1 +1,1 @@
-web: python slug_server.py runserver 0.0.0.0:$PORT
+web: python cal_hacks_3/flask_server.py
