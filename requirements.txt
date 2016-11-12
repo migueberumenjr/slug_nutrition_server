@@ -1,3 +1,4 @@
+websocket-client==0.37.0
 bottle==0.12.10
 Django==1.10.3
 iso8601==0.1.11
@@ -8,4 +9,4 @@ slackclient==1.0.2
 slacker==0.9.29
 virtualenv==15.0.3
 virtualenvwrapper-win==1.2.1
-websocket-client==0.37.0
+

@@ -1,1 +1,1 @@
-web: python slug_server.py
+web: python manage.py runserver 0.0.0.0:$PORT
