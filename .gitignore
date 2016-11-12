@@ -1,0 +1,4 @@
+serverenv
+*.pyc
+staticfiles
+.env
