@@ -4,32 +4,30 @@ import requests
 from flask import Flask
 app = Flask(__name__)
 
-token = "n8htaJw8T8g9oByV14pfeMPx43M2CZGhbOePUmek"
+token = "mTT5GDs1I6azjuW2U8dm1hHsmtfFPxjRoZvzbibl"
 
 @app.route('/return/<food>')
 def report(food):
     respList = foodSearch(token, food)
-    return respList
+    return(respList)
 
 def foodSearch(token, query):
-    new_query = query
-
-    searchQuery = {"api_key":token, "q":new_query, "format":"JSON", "ds":"Standard Reference"}
+    searchQuery = {"api_key":token, "q":query, "format":"JSON", "ds":"Standard Reference"}
     
     searchResponse = requests.get("http://api.nal.usda.gov/ndb/search/", params=searchQuery)
 
     simpleList = []
-    seq = ("name", "ndbno")
-    simpleDict = simpleDict.fromkeys(seq)
+    seq = ["name", "ndbno"]
     responseList = json.loads(searchResponse.text)
     for entry in responseList["list"]["item"]:
+        simpleDict = {}
+        simpleDict = simpleDict.fromkeys(seq)
         simpleDict["name"] = entry["name"]
         simpleDict["ndbno"] = entry["ndbno"]
         simpleList.append(simpleDict)
 
     print(simpleList)
-    return nutritionalData(simpleList, token)
-
+    return(simpleList)
 '''
 def nutritionalData(simpleList, token):
     for entry in respList["list"]["item"]:
@@ -39,6 +37,8 @@ def nutritionalData(simpleList, token):
         print(json.dumps(reportDict, indent=2))
 
     return prettyReport
+    
+    return("Hello")
 '''
 
 if __name__ == "__main__":
