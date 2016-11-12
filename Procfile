@@ -1,1 +1,1 @@
-web: python slug_server.py --log-file-
+web: python slug_server.py
