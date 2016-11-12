@@ -9,7 +9,7 @@ token = "mTT5GDs1I6azjuW2U8dm1hHsmtfFPxjRoZvzbibl"
 @app.route('/return/<food>')
 def report(food):
     respList = foodSearch(token, food)
-    return(respList)
+    return respList
 
 def foodSearch(token, query):
     searchQuery = {"api_key":token, "q":query, "format":"JSON", "ds":"Standard Reference"}
@@ -17,7 +17,7 @@ def foodSearch(token, query):
     searchResponse = requests.get("http://api.nal.usda.gov/ndb/search/", params=searchQuery)
 
     simpleList = []
-    seq = ["name", "ndbno"]
+    seq = ("name", "ndbno")
     responseList = json.loads(searchResponse.text)
     for entry in responseList["list"]["item"]:
         simpleDict = {}
@@ -27,7 +27,7 @@ def foodSearch(token, query):
         simpleList.append(simpleDict)
 
     print(simpleList)
-    return(simpleList)
+    return json.dumps(simpleList)
 '''
 def nutritionalData(simpleList, token):
     for entry in respList["list"]["item"]:
