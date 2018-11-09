@@ -7,7 +7,7 @@ itsdangerous==0.24
 Jinja2==2.8
 MarkupSafe==0.23
 pycurl==7.43.0
-requests==2.11.1
+requests==2.20.0
 six==1.10.0
 slackclient==1.0.2
 slacker==0.9.29
